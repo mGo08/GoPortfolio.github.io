@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mardelito's Portfolio</title>
+    <link rel="stylesheet" href="style.css" type="text/css">
+</head>
+<body>
+    <svg>
+        <filter id="noiseFilter">
+            <feTurbulence type="fractalNoise" baseFrequency="0.6" stitchTiles="stitch" />
+            <feColorMatrix in="colorNoise" type="matrix" values="1 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 1 0" />
+            <feComposite operator="in" in2="SourceGraphic" result="monoNoise" />
+            <feBlend in="SourceGraphic" in2="monoNoise" mode="screen" />
+        </filter>
+    </svg>
+
+    <div class="nav">
+        <div class="menu">
+            <a href="projects.html"><p>Projects</p></a>
+            <a href="#info"><p>Info</p></a>
+            <a href="#contacts"><p>Contact</p></a>
+            <a href="#references"><p>References</p></a>
+        </div>
+    </div>
+
+    <header class="header">
+        <h1>Mardelito Portfolio</h1>
+        <h2>BSCS - A222</h2>
+    </header>
+    
+    <section id="info" class="section">
+        <p class="section_paragraph">
+            Born in 2004 in Davao City, Philippines.
+        </p>
+        <p class="section_paragraph">
+            Welcome to my portfolio. I am currently a second-year Computer Science student at Mapua Malayan Colleges Mindanao. With a strong passion for technology, 
+            I am dedicated to advancing my skills and creativity in the field of computer science. I actively engage in various areas of study, including programming, system design, and data structures, 
+            with a focus on applying theoretical knowledge to practical projects. I believe in continuous learning and strive to expand my expertise through both academic pursuits and hands-on experiences.
+        </p>
+        <p class="section_paragraph">
+            As I continue my academic journey, I have actively sought out opportunities to explore advanced topics such as the Internet of Things (IoT), 
+            along with projects involving coffee shops and car rental services, aiming to develop practical solutions that integrate technology with real-world challenges. 
+            In addition to my academic work, I have engaged in extracurricular activities like esports, where I have developed valuable skills in teamwork, strategy, 
+            and critical thinking. This portfolio highlights the projects and achievements that demonstrate my growth, technical expertise, and dedication to making a positive 
+            impact in the tech industry.
+        </p>
+    </section>
+
+    <div class="blob_container">
+        <div class="pink blob"></div>
+        <div class="blue blob"></div>
+        <div class="green blob"></div>
+    </div>
+
+    <footer id="contacts">
+        <ul>
+            <li><a href="https://www.facebook.com/mj.tutorgo" target="_blank">Facebook</a></li>
+            <li><a href="https://github.com/mGo08" target="_blank">GitHub</a></li>
+            <li><a href="mailto:your-vecksgo@gmail.com">Email</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

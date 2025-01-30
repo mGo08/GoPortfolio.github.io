@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'PPBold';
+    src: url(font/ppneuemontreal-bold.woff);
+}
+
+@font-face {
+    font-family: 'PPSemi';
+    src: url(font/ppneuemontreal-semibolditalic.woff);
+}
+
+@font-face {
+    font-family: 'PPThin';
+    src: url(font/ppneuemontreal-thin.woff);
+}
+
+@font-face {
+    font-family: 'PPBook';
+    src: url(font/ppneuemontreal-book.woff);
+}
+
+body {
+    max-width: 100vw;
+    min-height: 100vh;
+    margin: 0;
+    color: white;
+    background-color: rgb(34, 31, 36);
+    font-family: 'PPBold';
+    text-align: center;
+    position: relative;
+    filter: url(#noiseFilter);
+    overflow: auto;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PPThin';
+    height: 100vh;
+    letter-spacing: 5px;
+}
+
+.header h2 {
+    font-family: 'PPThin';
+    font-size: 15px;
+}
+
+.section {
+    height: 100vh;
+    padding: 20rem;
+    font-size: 25px;
+    text-align: center;
+}
+
+.section_paragraph {
+    margin: 1rem 0;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 1s ease;
+}
+
+.section_paragraph--visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+#contacts {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+}
+
+#contacts ul {
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+#contacts ul li {
+    margin: 0 15px;
+}
+
+#contacts ul li a {
+    font-family: 'PPBook';
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px;
+    transition: 1s ease;
+}
+
+#contacts ul li a:hover {
+    color: #9d00e6;
+}
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 120%;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2em;
+}
+
+.menu a {
+    color: #fff; 
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid transparent; 
+    border-radius: 20px;
+    transition: border 1s ease;
+}
+
+.menu a:hover {
+    border: 1px solid #e683ff;
+    color: #e683ff;
+}
+
+.nav, .menu {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.nav--hidden, .menu--hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+.blob_container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+}
+
+.blob {
+    border-radius: 50%;
+    position: absolute;
+    filter: blur(80px);
+    animation: blobAnimation 8s infinite ease-in-out;
+}
+
+.pink {
+    background-color: rgb(146, 77, 237);
+    height: 30vw;
+    width: 30vw;
+    animation-delay: 0s;
+}
+
+.blue {
+    background-color: #eb66ca;
+    height: 25vw;
+    width: 25vw;
+    animation-delay: 2s;
+    top: 20%;
+    left: 10%;
+}
+
+.green {
+    background-color: #b1a56f;
+    height: 22vw;
+    width: 22vw;
+    animation-delay: 4s;
+    top: 30%;
+    left: 30%;
+}
+
+@keyframes blobAnimation {
+    0% {
+        transform: scale(1) translate(0, 0);
+    }
+    50% {
+        transform: scale(1.5) translate(50px, 50px);
+    }
+    100% {
+        transform: scale(1) translate(0, 0);
+    }
+}
