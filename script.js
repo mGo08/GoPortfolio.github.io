@@ -1,22 +1,34 @@
 const nav = document.querySelector('.nav');
 const menu = document.querySelector('.menu');
-const paragraphs = document.querySelectorAll(".section_paragraph");
+const headerprojects = document.querySelector('.headtxt');
+const containers = document.querySelectorAll('.container'); // Targeting '.container' now
+const paragraphs = document.querySelectorAll('.section_paragraph');
 
 document.addEventListener("scroll", function () {
-    toggleVisibility(nav);
-    toggleVisibility(menu);
-    paragraphs.forEach(paragraph => toggleVisibility(paragraph));
+    const shouldHide = window.scrollY > 50;
+
+    toggleVisibility(nav, shouldHide);
+    toggleVisibility(menu, shouldHide);
+    toggleVisibility(headerprojects, shouldHide);
+
+    containers.forEach(container => {
+        const isVisible = isInView(container);
+        container.classList.toggle("container--visible", isVisible);  // Toggling visibility for .container
+    });
+
+    paragraphs.forEach(paragraph => {
+        const isVisible = isInView(paragraph);
+        paragraph.classList.toggle("section_paragraph--visible", isVisible);
+    });
 });
 
-function toggleVisibility(element) {
-    const isVisible = isInView(element);
-    element.classList.toggle(`${element.className.split(' ')[0]}--hidden`, !isVisible);
-    if (element.classList.contains("section_paragraph")) {
-        element.classList.toggle("section_paragraph--visible", isVisible);
+function toggleVisibility(element, shouldHide) {
+    if (element) {
+        element.classList.toggle(`${element.classList[0]}--hidden`, shouldHide);
     }
 }
 
 function isInView(element) {
     const rect = element.getBoundingClientRect();
-    return rect.bottom > 0 && rect.top < (window.innerHeight - 150 || document.documentElement.clientHeight - 150);
+    return rect.top < window.innerHeight - 100 && rect.bottom > 0;
 }

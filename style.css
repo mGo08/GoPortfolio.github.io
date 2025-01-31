@@ -25,7 +25,7 @@
     margin: 1rem 0;
     transform: translateY(20px);
     opacity: 0;
-    transition: 1s ease;
+    transition: opacity 2s ease, transform 2s ease;
 }
 
 .section_paragraph--visible {
@@ -34,46 +34,75 @@
 }
 
 /* Project style */
-.headerProject {
+.headtxt {
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family: 'PPBold';
-    letter-spacing: 5px;
+    font-family: 'PPThin';
+    letter-spacing: 17px;
+    margin-bottom: 20px;
 }
 
 .container {
     display: flex;
-    align-items: center; /* Align items vertically */
-    gap: 20px; /* Space between logo and text */
+    align-items: center;
+    gap: 20px;
     border: 2px solid #ddd;
     border-radius: 30px;
-    margin: 10px auto; 
+    margin: 30px auto;
     padding: 20px;
-    width: 90%;
-    max-width: 1200px;
+    width: 150%;
+    max-width: 1700px;
     box-sizing: border-box;
+    overflow: hidden;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.container:hover {
+    background-color: #6900af2f; /* Change to desired hover background color */
 }
 
 .logo img {
-    max-width: 400px; /* Adjust size */
+    max-width: 300px; /* Adjust size */
     height: auto; /* Maintain aspect ratio */
     border-radius: 15px;
+}
+
+.project-title {
+    font-family: 'PPBook';
+    font-size: 35px;
+    text-align: left;
+    margin-bottom: 20px;
 }
 
 .project-info {
     font-family: 'PPBook';
     text-align: justify;
+    margin-bottom: 20px;
 }
 
 .link {
-    display: flex; 
-    justify-content: center;
+    display: flex;
+    justify-content: left;
     padding: 0;
     margin: 0;
-    text-decoration: none;
     list-style-type: none;
+}
+
+.link a {
+    font-family: 'PPBook';
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px;
+    transition: 1s ease;
+    margin: 0 15px; /* Add margin to space out links */
+}
+
+.link a:hover {
+    color: #9d00e6;
 }
 
 
@@ -188,13 +217,22 @@ body {
     color: #e683ff;
 }
 
-.nav, .menu {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1s ease, transform 1s ease;
+.container {
+    opacity: 0;
+    transition: opacity 3s ease;
 }
 
-.nav--hidden, .menu--hidden {
+.container--visible {
+    opacity: 1;
+}
+
+.headtxt, .nav, .menu {
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.headtxt--hidden, .nav--hidden, .menu--hidden {
     opacity: 0;
     transform: translateY(-20px);
 }
@@ -219,14 +257,14 @@ body {
     animation: blobAnimation 8s infinite ease-in-out;
 }
 
-.pink {
+.purple {
     background-color: rgb(146, 77, 237);
     height: 30vw;
     width: 30vw;
     animation-delay: 0s;
 }
 
-.blue {
+.pink {
     background-color: #eb66ca;
     height: 25vw;
     width: 25vw;
@@ -235,7 +273,7 @@ body {
     left: 10%;
 }
 
-.green {
+.yellow {
     background-color: #b1a56f;
     height: 22vw;
     width: 22vw;
@@ -254,4 +292,11 @@ body {
     100% {
         transform: scale(1) translate(0, 0);
     }
+}
+
+/* Optional: Animation for the icon */
+@keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0); }
 }
