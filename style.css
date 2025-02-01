@@ -1,112 +1,4 @@
-/* Index style */
-.header {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    font-family: 'PPThin';
-    height: 100vh;
-    letter-spacing: 5px;
-}
-
-.header h2 {
-    font-family: 'PPThin';
-    font-size: 15px;
-}
-
-.section {
-    height: 100%;
-    padding: 5rem;
-    font-size: 25px;
-    text-align: center;
-}
-
-.section_paragraph {
-    margin: 1rem 0;
-    transform: translateY(20px);
-    opacity: 0;
-    transition: opacity 2s ease, transform 2s ease;
-}
-
-.section_paragraph--visible {
-    transform: translateY(0);
-    opacity: 1;
-}
-
-/* Project style */
-.headtxt {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'PPThin';
-    letter-spacing: 17px;
-    margin-bottom: 20px;
-}
-
-.container {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-    border: 2px solid #ddd;
-    border-radius: 30px;
-    margin: 30px auto;
-    padding: 20px;
-    width: 150%;
-    max-width: 1700px;
-    box-sizing: border-box;
-    overflow: hidden;
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 1s ease, transform 1s ease;
-}
-
-.container:hover {
-    background-color: #6900af2f; /* Change to desired hover background color */
-}
-
-.logo img {
-    max-width: 300px; /* Adjust size */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 15px;
-}
-
-.project-title {
-    font-family: 'PPBook';
-    font-size: 35px;
-    text-align: left;
-    margin-bottom: 20px;
-}
-
-.project-info {
-    font-family: 'PPBook';
-    text-align: justify;
-    margin-bottom: 20px;
-}
-
-.link {
-    display: flex;
-    justify-content: left;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
-}
-
-.link a {
-    font-family: 'PPBook';
-    letter-spacing: 5px;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 12px;
-    transition: 1s ease;
-    margin: 0 15px; /* Add margin to space out links */
-}
-
-.link a:hover {
-    color: #9d00e6;
-}
-
-
-/* main & design */
+/* Main & Design */
 * {
     box-sizing: border-box;
     padding: 0;
@@ -148,12 +40,181 @@ body {
     -webkit-user-select: none;
 }
 
+/* Header Styles */
+.header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PPThin';
+    height: 100vh;
+    letter-spacing: 5px;
+}
+
+.header h2 {
+    font-family: 'PPThin';
+    font-size: 15px;
+}
+
+/* About Me Section */
+.about-me-container {
+    max-width: 700px;
+    margin: 10rem auto;
+    padding: 1rem 2rem;
+}
+
+.about-me-container h1 {
+    font-size: 3rem;
+    font-family: 'PPBook';
+    text-align: left;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.intro {
+    font-family: 'PPThin';
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-align: justify;
+    margin-bottom: 3rem;
+}
+
+.content-sections {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.section h2 {
+    font-size: 1.25rem;
+    font-family: 'PPBook';
+    text-align: left;
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem;
+}
+
+.section p {
+    font-size: 1rem;
+    font-family: 'PPThin';
+    text-align: justify;
+    letter-spacing: 1px;
+    margin-bottom: 3rem;
+}
+
+/* Project Section */
+.headtxt {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'PPThin';
+    letter-spacing: 17px;
+    margin-bottom: 20px;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    margin: 30px auto;
+    padding: 20px;
+    width: 150%;
+    max-width: 1700px;
+    box-sizing: border-box;
+    overflow: hidden;
+    opacity: 1;
+    transform: translateY(0);
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.container:hover {
+    background-color: #6900af2f;
+}
+
+.logo img {
+    max-width: 300px;
+    height: auto;
+    border-radius: 15px;
+}
+
+.project-title {
+    font-family: 'PPBook';
+    font-size: 35px;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.project-info {
+    font-family: 'PPBook';
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+.link {
+    display: flex;
+    justify-content: left;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+}
+
+.link a {
+    font-family: 'PPBook';
+    letter-spacing: 5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 12px;
+    transition: 1s ease;
+    margin: 0 15px;
+}
+
+.link a:hover {
+    color: #9d00e6;
+}
+
+/* Navigation Styles */
+.nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 120%;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+}
+
+.menu {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 2em;
+}
+
+.menu a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 16px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    transition: border 1s ease;
+}
+
+.menu a:hover {
+    border: 1px solid #e683ff;
+    color: #e683ff;
+}
+
+/* Contacts Section */
 #contacts {
     display: flex;
     flex-direction: row;
-    justify-content: center;
     align-items: center;
     width: 100%;
+    justify-content: center;
     padding: 20px;
     text-align: center;
 }
@@ -183,40 +244,7 @@ body {
     color: #9d00e6;
 }
 
-.nav {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    width: 120%;
-    position: absolute;
-    top: 40px;
-    right: 40px;
-}
-
-.menu {
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    align-items: center;
-    gap: 2em;
-}
-
-.menu a {
-    color: #fff; 
-    text-decoration: none;
-    padding: 10px 15px;
-    font-size: 16px;
-    border: 1px solid transparent; 
-    border-radius: 20px;
-    transition: border 1s ease;
-}
-
-.menu a:hover {
-    border: 1px solid #e683ff;
-    color: #e683ff;
-}
-
+/* Animations */
 .container {
     opacity: 0;
     transition: opacity 3s ease;
@@ -237,11 +265,23 @@ body {
     transform: translateY(-20px);
 }
 
+.about-me-container {
+    transform: translateY(20px);
+    opacity: 0;
+    transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-me-container--visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* Blob Background */
 .blob_container {
     position: absolute;
     top: 0;
     left: 0;
-    z-index: -1;
+    z-index: -2;
     height: 100%;
     width: 100%;
     display: flex;
@@ -292,11 +332,4 @@ body {
     100% {
         transform: scale(1) translate(0, 0);
     }
-}
-
-/* Optional: Animation for the icon */
-@keyframes bounce {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0); }
 }

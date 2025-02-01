@@ -1,8 +1,8 @@
 const nav = document.querySelector('.nav');
 const menu = document.querySelector('.menu');
 const headerprojects = document.querySelector('.headtxt');
-const containers = document.querySelectorAll('.container'); // Targeting '.container' now
-const paragraphs = document.querySelectorAll('.section_paragraph');
+const containers = document.querySelectorAll('.container'); 
+const paragraphs = document.querySelectorAll('.about-me-container');
 
 document.addEventListener("scroll", function () {
     const shouldHide = window.scrollY > 50;
@@ -13,12 +13,12 @@ document.addEventListener("scroll", function () {
 
     containers.forEach(container => {
         const isVisible = isInView(container);
-        container.classList.toggle("container--visible", isVisible);  // Toggling visibility for .container
+        container.classList.toggle("container--visible", isVisible);
     });
 
     paragraphs.forEach(paragraph => {
         const isVisible = isInView(paragraph);
-        paragraph.classList.toggle("section_paragraph--visible", isVisible);
+        paragraph.classList.toggle("about-me-container--visible", isVisible);
     });
 });
 
